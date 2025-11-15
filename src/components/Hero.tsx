@@ -46,7 +46,7 @@ export function Hero({ onStart }: HeroProps) {
           </div>
         </div>
         
-        <div className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.3s' }}>
+        <div className="grid grid-cols-2 gap-8 pt-12 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.3s' }}>
           <div className="space-y-2">
             <div className="text-3xl font-bold text-primary">5</div>
             <div className="text-sm text-muted-foreground">Categories</div>
