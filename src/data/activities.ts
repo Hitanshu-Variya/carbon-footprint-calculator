@@ -2,20 +2,23 @@ import { Activity, ActivityCategory } from '@/types/carbon';
 
 export const activities: Record<ActivityCategory, Activity[]> = {
   transport: [
-    { id: 'car', name: 'Car (km/day)', icon: '🚗', carbonPerUnit: 0.171, unit: 'km' },
-    { id: 'bus', name: 'Bus (km/day)', icon: '🚌', carbonPerUnit: 0.089, unit: 'km' },
-    { id: 'train', name: 'Train (km/day)', icon: '🚆', carbonPerUnit: 0.041, unit: 'km' },
+    { id: 'car', name: 'Car (km/day)', icon: '🚗', carbonPerUnit: 0.161, unit: 'km' },
+    { id: 'bus', name: 'Bus (km/day)', icon: '🚌', carbonPerUnit: 0.015, unit: 'km' },
+    { id: 'train', name: 'Train (km/day)', icon: '🚆', carbonPerUnit: 0.008, unit: 'km' },
     { id: 'bike', name: 'Bike (km/day)', icon: '🚴', carbonPerUnit: 0, unit: 'km' },
-    { id: 'flight', name: 'Flights/year', icon: '✈️', carbonPerUnit: 90, unit: 'flights' },
+    // A single domestic return flight (short-haul) in India
+    { id: 'flight', name: 'Flights/year', icon: '✈️', carbonPerUnit: 200, unit: 'flights' },
   ],
   energy: [
-    { id: 'electricity', name: 'Electricity (kWh/day)', icon: '💡', carbonPerUnit: 0.233, unit: 'kWh' },
-    { id: 'heating', name: 'Gas Heating (hours/day)', icon: '🔥', carbonPerUnit: 2.1, unit: 'hours' },
-    { id: 'ac', name: 'AC Usage (hours/day)', icon: '❄️', carbonPerUnit: 0.9, unit: 'hours' },
+    { id: 'electricity', name: 'Electricity (kWh/day)', icon: '💡', carbonPerUnit: 0.82, unit: 'kWh' }, // CEA India Grid Factor
+    // Assumes 3kW gas geyser/heater and Natural Gas factor
+    { id: 'heating', name: 'Gas Heating (hours/day)', icon: '🔥', carbonPerUnit: 0.732, unit: 'hours' },
+    // Assumes 1.5-ton AC (2.3kW) and India Grid Factor
+    { id: 'ac', name: 'AC Usage (hours/day)', icon: '❄️', carbonPerUnit: 1.886, unit: 'hours' },
   ],
   food: [
-    { id: 'meat', name: 'Meat Meals/week', icon: '🥩', carbonPerUnit: 6.61, unit: 'meals' },
-    { id: 'dairy', name: 'Dairy Products/day', icon: '🥛', carbonPerUnit: 1.3, unit: 'servings' },
+    { id: 'meat', name: 'Meat Meals/week', icon: '🥩', carbonPerUnit: 6.0, unit: 'meals' },
+    { id: 'dairy', name: 'Dairy Products/day', icon: '🥛', carbonPerUnit: 0.767, unit: 'servings' },
     { id: 'local', name: 'Local Food %', icon: '🥗', carbonPerUnit: -0.5, unit: '%' },
   ],
   digital: [

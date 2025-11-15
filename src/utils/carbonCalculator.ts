@@ -37,7 +37,7 @@ export function calculateCarbonFootprint(responses: UserResponse[]): CarbonResul
     }
   });
 
-  const totalCarbon = Object.values(categoryTotals).reduce((sum, val) => sum + val, 0);
+  const totalCarbon = Math.max(Object.values(categoryTotals).reduce((sum, val) => sum + val, 0), 0);
 
   // Calculate category breakdown
   const categoryBreakdown: CategoryResult[] = Object.entries(categoryTotals).map(([category, total]) => ({

@@ -33,10 +33,10 @@ export function Results({ result, onRestart }: ResultsProps) {
     const timer = setInterval(() => {
       current += increment;
       if (current >= result.totalCarbon) {
-        setAnimatedTotal(Math.round(result.totalCarbon));
+        setAnimatedTotal(Math.max(Math.round(result.totalCarbon), 0));
         clearInterval(timer);
       } else {
-        setAnimatedTotal(Math.round(current));
+        setAnimatedTotal(Math.max(Math.round(current), 0));
       }
     }, duration / steps);
     
